@@ -8,7 +8,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      image: ""
+      image: "",
+      breed: "",
+      count: 0
     };
   }
 
