@@ -14,7 +14,7 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
+  fetchData() {
     fetch("https://dog.ceo/api/breeds/image/random")
       .then(res => {
         return res.json();
