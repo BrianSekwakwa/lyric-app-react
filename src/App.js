@@ -9,9 +9,22 @@ class App extends Component {
     super();
     this.state = {
       image: "",
-      breed: "",
+      breed: {},
       count: 0
     };
+    this.fetchData = this.fetchData.bind(this);
+  }
+
+  componentDidMount() {
+    fetch("https://dog.ceo/api/breeds/list/all")
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        this.setState({
+          breed: data.message
+        });
+      });
   }
 
   fetchData() {
@@ -27,6 +40,15 @@ class App extends Component {
   }
 
   render() {
+    const dogBreeds = Object.keys(this.state.breed);
+    let list = document.createElement("ul");
+    let breedItems = "";
+    dogBreeds.forEach(item => {
+      breedItems = document.createElement("li");
+      breedItems.innerHTML = item;
+      list.appendChild(breedItems);
+    });
+    console.log(list);
     return (
       <div className="App">
         <Header />
