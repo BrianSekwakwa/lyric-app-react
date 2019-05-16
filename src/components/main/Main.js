@@ -1,15 +1,30 @@
 import React from "react";
 import "./Main.css";
 
-function Main() {
+function Main(props) {
+  let image = "";
+  let text = "";
+  let randomNumber = 0;
+
+  function generateImage() {
+    props
+      ? (randomNumber = Math.floor(Math.random() * props.state.meme.length))
+      : null;
+
+    console.log(randomNumber);
+  }
+
+  console.log(image);
+
   return (
     <div className="main">
-      <form action="">
-        <input type="text" placeholder="top text" />
-        <input type="text" placeholder="bottom text" />
-        <button type="button">Generate</button>
-      </form>
-      <div className="display">Some image over here</div>
+      <button onClick={generateImage} type="button">
+        Generate Image
+      </button>
+      <div className="display">
+        <img src={image} alt="" />
+        <p>{text}</p>
+      </div>
     </div>
   );
 }

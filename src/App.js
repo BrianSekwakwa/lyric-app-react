@@ -8,10 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      topText: "",
-      bottomText: "",
-      randomNumber: "",
-      image: ""
+      meme: ""
     };
   }
 
@@ -19,7 +16,10 @@ class App extends Component {
     fetch("https://api.imgflip.com/get_memes")
       .then(res => res.json())
       .then(data => {
-        console.log(data.data.memes);
+        // console.log(data.data.memes);
+        this.setState({
+          meme: data.data.memes
+        });
       });
   }
 
@@ -27,7 +27,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Main />
+        <Main state={this.state} />
         <Footer />
       </div>
     );
