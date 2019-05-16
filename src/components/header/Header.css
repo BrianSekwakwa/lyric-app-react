@@ -1,0 +1,11 @@
+.header {
+  background: blue;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header img {
+  margin-right: 1rem;
+}

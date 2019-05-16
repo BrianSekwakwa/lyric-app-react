@@ -1,0 +1,25 @@
+.main {
+  padding-top: 2rem;
+  text-align: center;
+}
+
+/* Form Input and button */
+.main input,
+button {
+  height: 2rem;
+  margin: 0.2rem;
+}
+
+.main input {
+  padding-left: 0.2rem;
+}
+
+.main button {
+  width: 5rem;
+}
+
+/* display image */
+
+.display {
+  margin-top: 1rem;
+}
