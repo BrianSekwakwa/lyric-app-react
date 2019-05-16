@@ -1,13 +1,15 @@
 import React from "react";
 import "./Main.css";
-import DogBreeds from "./dogbreeds/DogBreeds";
-import DogImages from "./dogimages/DogImages";
 
 function Main() {
   return (
-    <div>
-      <DogBreeds />
-      <DogImages />
+    <div className="main">
+      <form action="">
+        <input type="text" placeholder="top text" />
+        <input type="text" placeholder="bottom text" />
+        <button type="button">Generate</button>
+      </form>
+      <div className="display">Some image over here</div>
     </div>
   );
 }

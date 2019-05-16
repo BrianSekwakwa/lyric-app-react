@@ -3,12 +3,9 @@ import "./Header.css";
 
 function Header() {
   return (
-    <div>
-      <header>
-        <h1>MAN'S BESTFRIEND</h1>
-        <p>A collection of pictures of adorable dogs</p>
-      </header>
-      <div className="border" />
+    <div className="header">
+      <img src="" alt="" />
+      <h1>Meme Generator</h1>
     </div>
   );
 }
