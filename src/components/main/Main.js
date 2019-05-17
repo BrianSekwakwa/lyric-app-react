@@ -1,32 +1,34 @@
-import React from "react";
+import React, { Component } from "react";
 import "./Main.css";
+import axios from "axios";
 
-function Main(props) {
-  let image = "";
-  let text = "";
-  let randomNumber = 0;
-
-  function generateImage() {
-    props
-      ? (randomNumber = Math.floor(Math.random() * props.state.meme.length))
-      : null;
-
-    console.log(randomNumber);
+class Main extends Component {
+  constructor() {
+    super();
+    this.state = {
+      apiKey: "f2e1751f17c5b88c00e4dfeac793e96c",
+      character: ""
+    };
   }
 
-  console.log(image);
+  fetchData = () => {
+    axios
+      .get(`https://www.themealdb.com/api/json/v1/1/random.php`)
+      .then(res => {
+        console.log(res.data);
+        this.setState({
+          character: res.data
+        });
+      });
+  };
 
-  return (
-    <div className="main">
-      <button onClick={generateImage} type="button">
-        Generate Image
-      </button>
-      <div className="display">
-        <img src={image} alt="" />
-        <p>{text}</p>
+  render() {
+    return (
+      <div onClick={this.fetchData}>
+        <button>Click Button</button>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Main;
