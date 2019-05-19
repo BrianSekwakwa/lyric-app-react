@@ -1,5 +1,5 @@
 {
-  "name": "marvel-heros-react",
+  "name": "recipe-finder",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,7 +11,7 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8"
   },
-  "homepage": "https://briansekwakwa.github.io/marvel-heros-react",
+  "homepage": "https://briansekwakwa.github.io/recipe-finder",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
