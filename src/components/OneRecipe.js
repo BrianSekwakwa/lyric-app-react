@@ -17,7 +17,6 @@ class OneRecipe extends Component {
       this.setState({
         activeRecipe: res.data.recipes[0]
       });
-      console.log(this.state.activeRecipe);
     });
   };
   render() {
