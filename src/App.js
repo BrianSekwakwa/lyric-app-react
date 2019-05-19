@@ -32,10 +32,15 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-tittle">Recipe Search</h1>
+          <h1 className="App-title">
+            Recipe <span>Finder</span>
+          </h1>
+          <p>Search for your favorite recipe</p>
         </header>
-        <Form getRecipe={this.getRecipe} />
-        <Recipes recipes={this.state.recipes} />
+        <div className="max-width">
+          <Form getRecipe={this.getRecipe} />
+          <Recipes recipes={this.state.recipes} />
+        </div>
       </div>
     );
   }
